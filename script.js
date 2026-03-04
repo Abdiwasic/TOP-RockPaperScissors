@@ -22,8 +22,6 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-
-
 function playGame() {
     function playRound(humanChoice, computerChoice) {
         const caseInsHumanChoice = humanChoice
@@ -40,7 +38,7 @@ function playGame() {
             console.log(`You win! ${caseInsHumanChoice} beats ${computerChoice}`);
             humanScore += 1;
         } else {
-            console.log(`Draw! ${caseInsHumanChoice} and ${computerChoice}`) 
+            console.log(`Draw! ${caseInsHumanChoice} and ${computerChoice}`);
         }
     
     }
@@ -49,18 +47,15 @@ function playGame() {
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
-
-    
-
-    
 }
 for (let i = 1; i <= 5; i++) {
     playGame();
 }
-console.log(`HumanScore: ${humanScore} ComputerScore: ${computerScore}`);
 
 if (humanScore > computerScore) {
-    console.log("Game Over: Player wins the game")
+    console.log(`Game Over: Player wins the game with \n PlayerScore: ${humanScore} ComputerScore: ${computerScore}`);
+} else if (computerScore > humanScore) {
+    console.log(`Game Over: Computer wins the game with a result of \n computerScore: ${computerScore} humanScore: ${humanScore}`);
 } else {
-    console.log("Game Over: Computer wins the game");
+    console.log(`Game Over: The Game is Draw with a result of \n PlayerScore: ${humanScore} ComputerScore: ${computerScore}`);
 }
